@@ -14,6 +14,8 @@ jobs:
 
       - name: Install KaaS-CLI
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.JENKINS_GITHUB_PAT }}
         run: |
           ./scripts/install-kaas.sh 
       
