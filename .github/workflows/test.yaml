@@ -1,0 +1,23 @@
+---
+name: "Test Installation of KaaS-CLI"
+on: 
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  test-install:
+    runs-on: [self-hosted, linux, flyweight]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install KaaS-CLI
+        shell: bash
+        run: |
+          ./scripts/install-kaas.sh
+      
+      - name: Test KaaS-CLI
+        shell: bash
+        run: |
+          kaas-cli --version
+          kaas-cli hello
