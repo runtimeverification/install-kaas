@@ -5,6 +5,10 @@ inputs:
     description: "The version of KaaS to install"
     required: true
     default: "latest"
+  GITHUB_TOKEN:
+    description: "The GitHub Token to use for the KaaS CLI"
+    required: true
+    default: ${{ secrets.GITHUB_TOKEN }}
 runs:
   using: "composite"
   steps:
@@ -12,6 +16,7 @@ runs:
       uses: actions/setup-python@v5
       with:
         python-version: "3.10"
+        
     - name: Install Poetry
       uses: snok/install-poetry@v1
 
