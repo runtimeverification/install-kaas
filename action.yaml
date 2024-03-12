@@ -16,11 +16,11 @@ runs:
       uses: actions/setup-python@v5
       with:
         python-version: "3.10"
-        
+
     - name: Install Poetry
       uses: snok/install-poetry@v1
 
     - name: "Install KaaS"
       shell: bash
       run: |
-        ./scripts/kaas-cli.sh
+        ./scripts/install-kaas.sh 
