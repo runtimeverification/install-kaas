@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
+python3 -m venv kaas-env
+echo "kaas-env/bin" >> $GITHUB_PATH
+
 if [ ! -d "kaas" ]; then
   git clone https://${GITHUB_TOKEN}@github.com/runtimeverification/kaas.git
 else
@@ -12,5 +15,4 @@ pushd kaas/kaas-cli
 make build
 pip install dist/*.whl
 poetry install
-# poetry run kaas-cli hello
-poetry shell 
+popd > /dev/null
