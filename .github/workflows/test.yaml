@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  test-install:
+  install-test:
     runs-on: [self-hosted, linux, flyweight]
     steps:
       - name: Checkout

@@ -4,7 +4,6 @@ inputs:
   github-token:
     description: "The GitHub Token to use for the checkout of the KaaS repository"
     required: true
-    default: ${{ GITHUB_TOKEN }}
 runs:
   using: "composite"
   steps:
