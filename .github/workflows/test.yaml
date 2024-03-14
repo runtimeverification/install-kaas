@@ -14,12 +14,10 @@ jobs:
 
       - name: Use KaaS Action
         uses: ./ 
-        env:
-          GITHUB_TOKEN: ${{ secrets.JENKINS_GITHUB_PAT }}
-          GIT_USERNAME: rv-jenkins
-          GIT_PASSWORD: ${{ secrets.JENKINS_GITHUB_PAT }}
+        with:
+          github-token: ${{ secrets.JENKINS_GITHUB_PAT }}
 
       - name: Test kaas-cli
         shell: bash
         run: |
-          kaas-cli --version
+          kaas-cli

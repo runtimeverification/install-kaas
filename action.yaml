@@ -1,5 +1,10 @@
 name: "Install KaaS"
 description: "Install KaaS on the Runner for use in later steps and utilize kaas-cli push/pull of KCFGs"
+inputs:
+  github-token:
+    description: "The GitHub Token to use for the checkout of the KaaS repository"
+    required: true
+    default: ${{ secrets.GITHUB_TOKEN }}
 runs:
   using: "composite"
   steps:
@@ -8,10 +13,30 @@ runs:
       with:
         python-version: "3.10"
 
-    - name: Install Poetry
-      uses: snok/install-poetry@v1
+    - name: "Checkout KaaS"
+      uses: actions/checkout@v4
+      with:
+        repository: "runtimeverification/kaas"
+        ref: "develop"
+        path: "kaas"
+        token: ${{ event.inputs.github-token }}
+
+    - name: "Install Pip Packages"
+      shell: bash
+      run: |
+        pip install poetry 
+        pip install kaas/kaas-cli/dist/*.whl
 
     - name: "Install KaaS"
       shell: bash
       run: |
-        ${{ github.action_path }}/scripts/install-kaas.sh
+        pushd kaas/kaas-cli/
+        make build
+        pip install dist/*.whl
+        poetry install
+        popd
+
+    - name: "Put kaas-cli on the GITHUB_PATH"
+      shell: bash
+      run: |
+        echo "export PATH=\$PATH:\$HOME/.local/bin" >> $GITHUB_PATH
