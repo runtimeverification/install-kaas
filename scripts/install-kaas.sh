@@ -2,6 +2,8 @@
 set -eou pipefail
 
 if [ ! -d "kaas" ]; then
+  git config --global user.email "devops@runtimeverification.com"
+  git config --global user.name "rv-jenkins"
   git clone https://github.com/runtimeverification/kaas.git
 else
   pushd kaas
