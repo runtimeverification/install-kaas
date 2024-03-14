@@ -23,7 +23,7 @@ runs:
     - name: "Install Pip Packages"
       shell: bash
       run: |
-        pip install poetry 
+        pip install poetry click
 
     - name: "Install KaaS"
       shell: bash
