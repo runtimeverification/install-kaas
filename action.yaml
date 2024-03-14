@@ -1,10 +1,5 @@
 name: "Install KaaS"
 description: "Install KaaS on the Runner for use in later steps and utilize kaas-cli push/pull of KCFGs"
-inputs:
-  GITHUB_TOKEN:
-    description: "The GitHub Token to use for the KaaS CLI"
-    required: true
-    default: ${{ secrets.GITHUB_TOKEN }}
 runs:
   using: "composite"
   steps:
