@@ -16,5 +16,5 @@ jobs:
         uses: ./ 
         env:
           GITHUB_TOKEN: ${{ secrets.JENKINS_GITHUB_PAT }}
-          GIT_USER: rv-jenkins
+          GIT_USERNAME: rv-jenkins
           GIT_PASSWORD: ${{ secrets.JENKINS_GITHUB_PAT }}
