@@ -2,7 +2,7 @@
 set -eou pipefail
 
 if [ ! -d "kaas" ]; then
-  git clone https://github.com/runtimeverification/kaas.git\
+  git clone https://github.com/runtimeverification/kaas.git
 else
   push kaas
   git fetch && git pull
@@ -14,4 +14,3 @@ pip install dist/*.whl
 poetry install
 # poetry run kaas-cli hello
 poetry shell 
-popd > /dev/null

@@ -12,15 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install KaaS-CLI
-        shell: bash
+      - name: Use KaaS Action
+        uses: ./action.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.JENKINS_GITHUB_PAT }}
-        run: |
-          ./scripts/install-kaas.sh 
-      
-      - name: Test KaaS-CLI
-        shell: bash
-        run: |
-          kaas-cli --version
-          kaas-cli hello

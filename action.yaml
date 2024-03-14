@@ -1,10 +1,6 @@
 name: "Install KaaS"
 description: "Install KaaS on the Runner for use in later steps and utilize kaas-cli push/pull of KCFGs"
 inputs:
-  kaas_version:
-    description: "The version of KaaS to install"
-    required: true
-    default: "latest"
   GITHUB_TOKEN:
     description: "The GitHub Token to use for the KaaS CLI"
     required: true
@@ -23,4 +19,4 @@ runs:
     - name: "Install KaaS"
       shell: bash
       run: |
-        ./scripts/install-kaas.sh 
+        ${{ github.action_path }}/scripts/install-kaas.sh
