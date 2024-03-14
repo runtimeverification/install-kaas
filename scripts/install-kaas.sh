@@ -4,7 +4,7 @@ set -eou pipefail
 if [ ! -d "kaas" ]; then
   git clone https://github.com/runtimeverification/kaas.git
 else
-  push kaas
+  pushd kaas
   git fetch && git pull
   popd > /dev/null
 fi
