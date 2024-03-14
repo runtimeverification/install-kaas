@@ -18,7 +18,7 @@ runs:
         repository: "runtimeverification/kaas"
         ref: "develop"
         path: "kaas"
-        token: ${{ event.inputs.github-token }}
+        token: ${{ inputs.github-token }}
 
     - name: "Install Pip Packages"
       shell: bash
