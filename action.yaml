@@ -24,7 +24,7 @@ runs:
       shell: bash
       run: |
         pip install poetry 
-        pip install kaas/kaas-cli/dist/*.whl
+        pip install ./kaas/kaas-cli/dist/*.whl
 
     - name: "Install KaaS"
       shell: bash
