@@ -1,8 +1,5 @@
 name: "Install KaaS"
 description: "Install KaaS on the Runner for use in later steps and utilize kaas-cli push/pull of KCFGs"
-branding:
-  icon: "activity"
-  color: "blue"
 inputs:
   github-token:
     description: "The GitHub Token to use for the checkout of the KaaS repository"
