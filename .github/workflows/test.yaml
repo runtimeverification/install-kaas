@@ -21,3 +21,4 @@ jobs:
         shell: bash
         run: |
           kaas-cli
+          kaas-cli --version
