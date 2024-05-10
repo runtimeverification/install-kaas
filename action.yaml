@@ -15,4 +15,4 @@ runs:
     - name: "Install Pip Packages"
       shell: bash
       run: |
-        pip install kaas-cli
+        pip install kaas-cli --force-reinstall
