@@ -20,4 +20,4 @@ jobs:
       - name: Test kaas-cli
         shell: bash
         run: |
-          kaas-cli
+          kaas-cli --help
