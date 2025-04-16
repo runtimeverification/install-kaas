@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 jobs:
   install-test:
-    runs-on: [self-hosted, linux, flyweight]
+    runs-on: [self-hosted, linux, github-runner-18]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
